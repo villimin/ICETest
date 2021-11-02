@@ -22,7 +22,7 @@ namespace ICE_Villy_Test
             int index = response.LastIndexOf('=');
             string kelvinStr = response.Substring(index + 1, response.Length - index - 1);
 
-            return float.Parse(kelvinStr) * KELVIN_TO_CELSIUS;
+            return float.Parse(kelvinStr) - KELVIN_TO_CELSIUS;
         }
 
         public static string RunCommand(string filePath, float longitude, float latitude)
