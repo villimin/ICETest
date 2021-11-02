@@ -14,6 +14,7 @@ namespace ICE_Villy_Test
 {
     public static class ForecastCalculator
     {
+        public const float KELVIN_TO_CELSIUS = -273.15f;
         public static readonly string GRIB_CLI_EXE_PATH = $"{Config.ROOT_FOLDER_PATH}wgrib2\\wgrib2.exe";
 
         public static float GetCelcius(string response)
@@ -21,7 +22,7 @@ namespace ICE_Villy_Test
             int index = response.LastIndexOf('=');
             string kelvinStr = response.Substring(index + 1, response.Length - index - 1);
 
-            return float.Parse(kelvinStr);
+            return float.Parse(kelvinStr) * KELVIN_TO_CELSIUS;
         }
 
         public static string RunCommand(string filePath, float longitude, float latitude)
