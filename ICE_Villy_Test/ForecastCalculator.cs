@@ -14,7 +14,7 @@ namespace ICE_Villy_Test
 {
     public static class ForecastCalculator
     {
-        public const float KELVIN_TO_CELSIUS = -273.15f;
+        public const float KELVIN_TO_CELSIUS = 273.15f;
         public static readonly string GRIB_CLI_EXE_PATH = $"{Config.ROOT_FOLDER_PATH}wgrib2\\wgrib2.exe";
 
         public static float GetCelcius(string response)
