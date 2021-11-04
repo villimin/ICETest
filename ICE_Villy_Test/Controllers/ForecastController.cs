@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +16,7 @@ namespace ICE_Villy_Test.Controllers
             try
             {
                 string filePath = string.Empty;
-                if (!FileManager.DownloadFileIfNotExists(date, DateTime.Now, out string errorMessage, ref filePath))
+                if (!FileManager.DownloadFileIfNotExists(date, out string errorMessage, ref filePath))
                     return errorMessage;
 
                 string key = PrepareKey(CACHE_KEY, date, latitude, longitude);
